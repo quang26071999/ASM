@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ASM</string>
+
+    <string name="facebook_app_id">739584714551935</string>
+    <string name="fb_login_protocol_scheme">fb1234</string>
+    <string name="facebook_client_token">8a63642e30b15db31e4966e540c40180</string>
+    <string name="tv_sign_up"><u>Đăng kí ngay</u></string>
+
+</resources>
