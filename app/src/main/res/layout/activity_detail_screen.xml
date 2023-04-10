@@ -12,18 +12,32 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:scaleType="fitXY"
-            android:id="@+id/detail_image_book"/>
+            android:scaleType="centerCrop"
+            android:id="@+id/detail_book_image"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Truyện 1"
-            android:id="@+id/detail_name_book"
+            android:id="@+id/detail_book_name"
             android:layout_alignParentBottom="true"
             android:padding="20dp"
+
             android:textColor="@color/white"
             android:fontFamily="@font/kanit_regular"
             android:textSize="25dp"/>
+
+        <ImageView
+            android:id="@+id/like"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/thumb_up_48px" />
+
     </RelativeLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -35,6 +49,7 @@
             android:layout_weight="1"
             android:orientation="vertical">
             <TextView
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -70,6 +85,12 @@
                 android:fontFamily="@font/roboto_regular"/>
         </LinearLayout>
     </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#27BF7171"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -79,18 +100,29 @@
         android:textSize="18dp"
         android:layout_marginTop="10dp"/>
     <TextView
+        android:layout_margin="10dp"
+        android:background="#FFFFFF"
+        android:id="@+id/detail_book_description"
         android:layout_width="match_parent"
         android:layout_height="100dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="7dp"
+        android:textSize="16dp"
+        android:scrollbars="horizontal"
+        android:text="Võ đạo đỉnh phong, là cô độc, là tịch mịch, là dài đằng đẵng cầu tác, là cao xử bất thắng hàn Phát triển trong nghịch cảnh, cầu sinh nơi tuyệt địa, bất khuất không buông tha, mới có thể có thể phá võ chi cực đạo."
         />
+
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/detail_btn"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:text="Đọc truyện"
         android:textSize="20dp"
         android:layout_margin="25dp"
-        android:backgroundTint="#6C3838"/>
+        android:backgroundTint="#906C3838"/>
+
     <TextView
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bình luận liên quan"
@@ -101,7 +133,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/rv_comment"/>
+        android:id="@+id/rv_comment"
+        android:paddingLeft="7dp"/>
 
 
 </LinearLayout>

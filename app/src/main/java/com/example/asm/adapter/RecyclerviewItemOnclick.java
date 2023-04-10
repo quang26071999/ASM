@@ -1,10 +1,12 @@
 package com.example.asm.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class RecyclerviewItemOnclick implements RecyclerView.OnItemTouchListener {
@@ -18,7 +20,7 @@ public class RecyclerviewItemOnclick implements RecyclerView.OnItemTouchListener
 
     GestureDetector mGestureDetector;
 
-    public RecyclerviewItemOnclick(Context context, final RecyclerView recyclerView, OnItemClickListener listener) {
+    public RecyclerviewItemOnclick(Context context, RecyclerView recyclerView, OnItemClickListener listener) {
         mListener = listener;
         mGestureDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {
             @Override

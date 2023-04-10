@@ -17,115 +17,130 @@
         android:layout_marginBottom="20dp"
         android:fontFamily="@font/bungeeshade_regular"/>
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fullNameInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:startIconDrawable="@drawable/call_48px"
         app:boxCornerRadiusBottomEnd="30dp"
         app:boxCornerRadiusBottomStart="30dp"
         app:boxCornerRadiusTopEnd="30dp"
         app:boxCornerRadiusTopStart="30dp"
         app:boxStrokeWidth="2dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        app:errorEnabled="true"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         >
 
-        <com.google.android.material.textfield.TextInputEditText
+        <EditText
             android:id="@+id/sign_in_fullName"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_margin="25dp"
-            android:hint="Họ và *"
-            android:inputType="number"
+            android:hint="Họ và tên*"
+
             />
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/usernameInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:startIconDrawable="@drawable/call_48px"
         app:boxCornerRadiusBottomEnd="30dp"
         app:boxCornerRadiusBottomStart="30dp"
         app:boxCornerRadiusTopEnd="30dp"
         app:boxCornerRadiusTopStart="30dp"
         app:boxStrokeWidth="2dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        app:errorEnabled="true"
+        app:counterMaxLength="10"
+        app:counterEnabled="true"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
         >
 
-        <com.google.android.material.textfield.TextInputEditText
+        <EditText
             android:id="@+id/sign_in_username"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_margin="25dp"
             android:hint="Số điện thoại*"
             android:inputType="number"
+
             />
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:startIconDrawable="@drawable/call_48px"
         app:boxCornerRadiusBottomEnd="30dp"
         app:boxCornerRadiusBottomStart="30dp"
         app:boxCornerRadiusTopEnd="30dp"
         app:boxCornerRadiusTopStart="30dp"
         app:boxStrokeWidth="2dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        app:errorEnabled="true"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
         >
 
-        <com.google.android.material.textfield.TextInputEditText
+        <EditText
             android:id="@+id/sign_in_email"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_margin="25dp"
             android:hint="Email*"
-            android:inputType="number"
+
             />
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:startIconDrawable="@drawable/call_48px"
         app:boxCornerRadiusBottomEnd="30dp"
         app:boxCornerRadiusBottomStart="30dp"
         app:boxCornerRadiusTopEnd="30dp"
         app:boxCornerRadiusTopStart="30dp"
         app:boxStrokeWidth="2dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        app:errorEnabled="true"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         >
 
-        <com.google.android.material.textfield.TextInputEditText
+        <EditText
             android:id="@+id/sign_in_password"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_margin="25dp"
             android:hint="Mật khẩu*"
-            android:inputType="number"
+            android:inputType="textPassword"
             />
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/rePasswordInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:startIconDrawable="@drawable/call_48px"
         app:boxCornerRadiusBottomEnd="30dp"
         app:boxCornerRadiusBottomStart="30dp"
         app:boxCornerRadiusTopEnd="30dp"
         app:boxCornerRadiusTopStart="30dp"
         app:boxStrokeWidth="2dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        app:errorEnabled="true"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         >
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/sign_in_repassword"
+        <EditText
+            android:id="@+id/sign_in_rePassword"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_margin="25dp"
             android:hint="Nhập lại mật khẩu*"
-            android:inputType="number"
+            android:inputType="textPassword"
             />
     </com.google.android.material.textfield.TextInputLayout>
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_sign_up"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="Đăng nhập"
+        android:text="Đăng ký"
         android:textSize="20dp"
         android:layout_margin="25dp"
         android:backgroundTint="#906C3838"/>

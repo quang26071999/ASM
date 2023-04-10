@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="20dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <TextView
+        android:id="@+id/comment_item_fullName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nguyễn Văn A"
+        android:textSize="18dp"
+        android:textFontWeight="600"
+        android:padding="10dp"
+        android:fontFamily="@font/roboto_medium"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="#2CAA8686"/>
+    <TextView
+        android:id="@+id/comment_item_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="dsadasdasdasdadasdadasdasdasdasdasdasdasdsdasd"
+        android:textSize="16dp"
+        android:padding="10dp"
+        android:fontFamily="@font/roboto_regular"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

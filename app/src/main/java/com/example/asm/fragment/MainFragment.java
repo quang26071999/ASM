@@ -1,56 +1,55 @@
-package com.example.asm.activity;
-
-
+package com.example.asm.fragment;
 
 import static com.example.asm.constant.url;
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
+import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
-import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
 import com.example.asm.R;
+import com.example.asm.activity.DetailScreenActivity;
+import com.example.asm.activity.MainActivity;
 import com.example.asm.adapter.BookAdapter;
 import com.example.asm.adapter.RecyclerviewItemOnclick;
 import com.example.asm.controller.books.BookController;
-import com.example.asm.controller.books.GetAllBook;
 import com.example.asm.model.Book;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import kotlin.experimental.BitwiseOperationsKt;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-
-public class MainActivity extends AppCompatActivity {
+public class MainFragment extends Fragment {
     ViewFlipper viewFlipper;
     ImageView img1, img2, img3;
     RecyclerView rv1,rv2;
     public BookAdapter adapter;
     List<Book> bookList;
     LinearLayoutManager linearLayoutManager,linearLayoutManager2;
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        initial();
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_main, container, false);
+        initial(view);
         rv1.addOnItemTouchListener(
-                new RecyclerviewItemOnclick(this, rv1 ,new RecyclerviewItemOnclick.OnItemClickListener() {
+                new RecyclerviewItemOnclick(view.getContext(), rv1 ,new RecyclerviewItemOnclick.OnItemClickListener() {
                     @Override public void onItemClick(View view, int position) {
-                        Intent intent = new Intent(MainActivity.this,DetailScreenActivity.class);
+                        Intent intent = new Intent(view.getContext(), DetailScreenActivity.class);
                         String id = bookList.get(position).getId();
                         intent.putExtra("id",id);
                         startActivity(intent);
@@ -61,21 +60,22 @@ public class MainActivity extends AppCompatActivity {
                     }
                 })
         );
+        return view;
     }
-    void initial(){
-        viewFlipper = findViewById(R.id.view_flip);
-        img1 = findViewById(R.id.img1);
-        img2 = findViewById(R.id.img2);
-        img3 = findViewById(R.id.img3);
-        rv1 = findViewById(R.id.rv_1);
-        rv2 = findViewById(R.id.rv_2);
+    void initial(View view){
+        viewFlipper = view.findViewById(R.id.view_flip);
+        img1 = view.findViewById(R.id.img1);
+        img2 = view.findViewById(R.id.img2);
+        img3 = view.findViewById(R.id.img3);
+        rv1 = view.findViewById(R.id.rv_1);
+        rv2 = view.findViewById(R.id.rv_2);
         Picasso.get().load("https://riki.edu.vn/wp-content/uploads/2019/12/truyen-manga-1-1024x592.jpg").into(img1);
         Picasso.get().load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpE__grCNqCDreQ-TrtEQ_dIhmSMuvxG6q1Q&usqp=CAU").into(img2);
         Picasso.get().load("https://mcdn.coolmate.me/uploads/April2022/nhung-thuat-ngu-trong-anime-manga-7.jpg").into(img3);
         viewFlipper.setFlipInterval(3000);
         getBooks();
-        linearLayoutManager = new LinearLayoutManager(this);
-        linearLayoutManager2 = new LinearLayoutManager(this);
+        linearLayoutManager = new LinearLayoutManager(view.getContext());
+        linearLayoutManager2 = new LinearLayoutManager(view.getContext());
         linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
         linearLayoutManager2.setOrientation(RecyclerView.HORIZONTAL);
         rv1.setLayoutManager(linearLayoutManager);
@@ -84,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
         adapter = new BookAdapter(bookList);
         rv1.setAdapter(adapter);
         rv2.setAdapter(adapter);
-        getSupportActionBar().hide();
 
     }
     public List<Book> getBooks(){

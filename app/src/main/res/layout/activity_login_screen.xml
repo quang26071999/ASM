@@ -59,16 +59,21 @@
             app:boxCornerRadiusBottomStart="30dp"
             app:boxCornerRadiusTopEnd="30dp"
             app:boxCornerRadiusTopStart="30dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
             app:boxStrokeWidth="2dp"
+            android:hint="Nhập số điện thoại"
+            app:counterMaxLength="10"
+            app:counterEnabled="true"
+            app:errorEnabled="true"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/til_username"
             >
-
-            <com.google.android.material.textfield.TextInputEditText
+            <EditText
                 android:id="@+id/username"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_margin="25dp"
-                android:hint="Nhập số điện thoại"
+                android:layout_height="wrap_content"
+
                 android:inputType="number"
                 />
         </com.google.android.material.textfield.TextInputLayout>
@@ -81,15 +86,17 @@
             app:boxCornerRadiusTopEnd="30dp"
             app:boxCornerRadiusTopStart="30dp"
             app:boxStrokeWidth="2dp"
-            android:autofillHints=""
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            app:errorEnabled="true"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/til_password"
             >
 
-            <com.google.android.material.textfield.TextInputEditText
+            <EditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_margin="25dp"
+                android:layout_height="wrap_content"
                 android:hint="Nhập mật khẩu"
                 android:inputType="textPassword"
                 />

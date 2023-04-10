@@ -1,5 +1,7 @@
 package com.example.asm.adapter;
 
+import static com.example.asm.constant.url;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,9 +40,8 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
     @Override
     public void onBindViewHolder(@NonNull BookViewHolder holder, int position) {
         Book book = bookList.get(position);
-        Picasso.get().load(book.coverImage).into(holder.item_book_img);
+        Picasso.get().load(url+book.coverImage).into(holder.item_book_img);
         holder.item_book_name.setText(book.bookName);
-
     }
 
     @Override
